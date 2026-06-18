@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calutec | Desenvolvimento de Sites e Sistemas</title>
+    <meta
+      name="description"
+      content="Desenvolvimento de sites, sistemas web, lojas virtuais, automações e integrações sob medida para empresas."
+    >
+    <meta name="theme-color" content="#061b38">
+    <meta property="og:title" content="Calutec | Desenvolvimento de Sites e Sistemas">
+    <meta
+      property="og:description"
+      content="Soluções digitais sob medida para organizar processos, vender mais e profissionalizar sua presença online."
+    >
+    <link rel="icon" href="assets/img/calutec-mark.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/css/styles.css" as="style">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#inicio" aria-label="Calutec - Início">
+        <img src="assets/img/calutec-mark.svg" alt="" width="42" height="42">
+        <span>
+          <strong>Calutec</strong>
+          <small>Tecnologia e Sistemas</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Abrir menu</span>
+      </button>
+
+      <nav id="site-menu" class="site-nav" data-site-nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#processo">Processo</a>
+        <a href="#portfolio">Projetos</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="#contato">Orçamento</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <canvas id="tech-canvas" aria-hidden="true"></canvas>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit-a" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit-b" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Sites, sistemas e automação para empresas</p>
+            <h1>Desenvolvimento de sistemas sob medida</h1>
+            <p class="hero-lead">
+              Criamos sites profissionais, plataformas web, lojas virtuais e integrações para transformar
+              processos manuais em soluções digitais simples de usar.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://wa.me/5541996310725?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20site%20ou%20sistema." target="_blank" rel="noopener">
+                Solicitar orçamento
+              </a>
+              <a class="button button-secondary" href="#servicos">Ver soluções</a>
+            </div>
+            <div class="hero-proof" aria-label="Diferenciais">
+              <span>Curitiba e atendimento remoto</span>
+              <span>Projeto, desenvolvimento e suporte</span>
+              <span>Desde 2013 no mercado</span>
+            </div>
+          </div>
+
+          <div class="hero-system" aria-label="Prévia visual de painéis e sistemas">
+            <div class="system-panel panel-main">
+              <div class="panel-top">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="panel-body">
+                <div class="metric-row">
+                  <strong>Operação digital</strong>
+                  <span>98%</span>
+                </div>
+                <div class="chart-bars">
+                  <i style="--h: 45%"></i>
+                  <i style="--h: 70%"></i>
+                  <i style="--h: 52%"></i>
+                  <i style="--h: 85%"></i>
+                  <i style="--h: 64%"></i>
+                  <i style="--h: 92%"></i>
+                </div>
+                <div class="flow-list">
+                  <span>Lead</span>
+                  <span>Orçamento</span>
+                  <span>Contrato</span>
+                  <span>Entrega</span>
+                </div>
+              </div>
+            </div>
+            <div class="system-panel panel-code">
+              <code>api.status = "online"</code>
+              <code>sync.clientes()</code>
+              <code>dashboard.render()</code>
+            </div>
+            <div class="system-panel panel-mini">
+              <span>Site</span>
+              <strong>SEO + Performance</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-band" aria-label="Resumo da Calutec">
+        <div>
+          <strong>13+</strong>
+          <span>anos de experiência em tecnologia</span>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span>foco em solução prática para o cliente</span>
+        </div>
+        <div>
+          <strong>1:1</strong>
+          <span>atendimento direto do planejamento ao suporte</span>
+        </div>
+      </section>
+
+      <section id="servicos" class="section section-light">
+        <div class="section-heading">
+          <p class="eyebrow">O que a Calutec desenvolve</p>
+          <h2>Soluções digitais para tirar ideias do papel e organizar sua empresa</h2>
+          <p>
+            O foco agora é tecnologia aplicada ao negócio: presença digital, sistemas internos,
+            automações e ferramentas que economizam tempo todos os dias.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v11H4z"></path><path d="M8 20h8"></path><path d="M12 16v4"></path></svg>
+            </span>
+            <h3>Sites profissionais</h3>
+            <p>Sites institucionais, landing pages e portais rápidos, responsivos e preparados para captação de clientes.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"></path><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h5"></path></svg>
+            </span>
+            <h3>Sistemas web</h3>
+            <p>Painéis administrativos, controle de pedidos, cadastros, relatórios e áreas internas sob medida.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 12H7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path><path d="M9 12h6"></path></svg>
+            </span>
+            <h3>Lojas virtuais</h3>
+            <p>Estruturas de venda online com catálogo, carrinho, pagamentos, frete e integração com atendimento.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 12h5"></path><path d="M15 12h5"></path><path d="M9 6h6v12H9z"></path><path d="M12 3v3"></path><path d="M12 18v3"></path></svg>
+            </span>
+            <h3>Automações e integrações</h3>
+            <p>Conexões com WhatsApp, formulários, APIs, planilhas, CRM, pagamentos e rotinas repetitivas.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 18V6"></path><path d="M4 18h16"></path><path d="M8 15v-4"></path><path d="M12 15V8"></path><path d="M16 15v-6"></path></svg>
+            </span>
+            <h3>Dashboards e relatórios</h3>
+            <p>Indicadores claros para acompanhar vendas, atendimentos, produtividade e dados importantes do negócio.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z"></path><path d="M9 12l2 2 4-5"></path></svg>
+            </span>
+            <h3>Manutenção e evolução</h3>
+            <p>Suporte técnico, melhorias contínuas, correções, hospedagem e acompanhamento após a publicação.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="split">
+          <div class="section-heading align-left">
+            <p class="eyebrow">Para quem é</p>
+            <h2>Projetos pensados para empresas que precisam vender, controlar ou automatizar</h2>
+            <p>
+              A Calutec pode atender negócios locais, prestadores de serviço, lojas, escritórios e empresas
+              que querem substituir controles manuais por um sistema confiável.
+            </p>
+          </div>
+
+          <div class="solution-list">
+            <div>
+              <strong>Presença digital</strong>
+              <span>Site institucional, landing page, blog, SEO básico e páginas de campanha.</span>
+            </div>
+            <div>
+              <strong>Operação interna</strong>
+              <span>Controle de clientes, ordens de serviço, estoque, pedidos, agenda e relatórios.</span>
+            </div>
+            <div>
+              <strong>Atendimento e vendas</strong>
+              <span>Formulários inteligentes, funis de orçamento, WhatsApp e integrações comerciais.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="processo" class="section section-light">
+        <div class="section-heading">
+          <p class="eyebrow">Como funciona</p>
+          <h2>Um processo simples, transparente e com entregas por etapa</h2>
+        </div>
+
+        <div class="process-grid">
+          <article>
+            <span>01</span>
+            <h3>Diagnóstico</h3>
+            <p>Entendemos sua empresa, o problema que precisa resolver e o resultado esperado.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Proposta</h3>
+            <p>Definimos escopo, prazo, recursos essenciais e o melhor caminho técnico para o projeto.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Desenvolvimento</h3>
+            <p>Criamos a solução, validamos telas e ajustamos fluxos antes da entrega final.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Publicação</h3>
+            <p>Colocamos no ar, configuramos domínio, hospedagem e acompanhamos os primeiros acessos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section section-muted">
+        <div class="section-heading">
+          <p class="eyebrow">Projetos e possibilidades</p>
+          <h2>Exemplos de entregas que ajudam a divulgar seu trabalho</h2>
+          <p>
+            Use esta área para exibir seus melhores sites, sistemas e automações. Ela já está pronta
+            para receber links reais do portfólio.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="project-card">
+            <a class="project-visual" href="https://calutec.com.br/" target="_blank" rel="noopener" aria-label="Ver site institucional da Calutec">
+              <img src="assets/img/projetos/site-calutec.png" alt="Prévia do site institucional da Calutec" loading="lazy">
+            </a>
+            <h3>Site institucional</h3>
+            <p>Site da Calutec com apresentação profissional de serviços, tecnologia e captação pelo WhatsApp.</p>
+            <a class="project-link" href="https://calutec.com.br/" target="_blank" rel="noopener">Ver site</a>
+          </article>
+
+          <article class="project-card">
+            <a class="project-visual" href="/painel/ordem.php" target="_blank" rel="noopener" aria-label="Ver sistema de ordem de serviço">
+              <img src="assets/img/projetos/sistema-ordem-servico.png" alt="Prévia do sistema de ordem de serviço" loading="lazy">
+            </a>
+            <h3>Sistema de gestão</h3>
+            <p>Projeto de ordem de serviço para controlar clientes, atendimentos, status, equipe e indicadores.</p>
+            <a class="project-link" href="/painel/ordem.php" target="_blank" rel="noopener">Ver sistema</a>
+          </article>
+
+          <article class="project-card">
+            <a class="project-visual" href="https://lubayshop.com.br/" target="_blank" rel="noopener" aria-label="Ver loja virtual Lubay Shop">
+              <img src="assets/img/projetos/loja-lubayshop.png" alt="Prévia da loja virtual Lubay Shop" loading="lazy">
+            </a>
+            <h3>Loja virtual</h3>
+            <p>Lubay Shop, loja virtual com catálogo online, navegação comercial e estrutura para vendas digitais.</p>
+            <a class="project-link" href="https://lubayshop.com.br/" target="_blank" rel="noopener">Ver loja</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="tech-strip">
+          <div>
+            <p class="eyebrow">Tecnologia com finalidade</p>
+            <h2>Desenvolvemos pensando em velocidade, segurança e facilidade de manutenção</h2>
+          </div>
+          <ul>
+            <li>PHP, Laravel, Node, Python e demais linguagens que fizerem sentido na operação.</li>
+            <li>WordPress quando fizer sentido</li>
+            <li>Banco de dados e APIs</li>
+            <li>Hospedagem, domínio e e-mail profissional</li>
+            <li>SEO técnico e performance</li>
+            <li>Design responsivo</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="faq" class="section section-muted">
+        <div class="section-heading">
+          <p class="eyebrow">Dúvidas frequentes</p>
+          <h2>Perguntas comuns antes de iniciar um projeto</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Quanto custa desenvolver um site ou sistema?</summary>
+            <p>Depende do escopo, quantidade de telas, integrações e regras de negócio. O ideal é fazer um diagnóstico rápido para montar uma proposta justa.</p>
+          </details>
+          <details>
+            <summary>Vocês fazem só site ou também sistema completo?</summary>
+            <p>Fazemos os dois. Podemos criar desde uma landing page comercial até sistemas web com login, painel administrativo, relatórios e integrações.</p>
+          </details>
+          <details>
+            <summary>Consigo pedir melhorias depois que publicar?</summary>
+            <p>Sim. O projeto pode continuar evoluindo com suporte, manutenção, novas telas, automações e otimizações conforme sua empresa crescer.</p>
+          </details>
+          <details>
+            <summary>O site funciona bem no celular?</summary>
+            <p>Sim. A estrutura é pensada para desktop, tablet e celular, com foco em carregamento rápido e contato fácil pelo WhatsApp.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="contato" class="contact-section">
+        <div class="contact-copy">
+          <p class="eyebrow">Vamos conversar</p>
+          <h2>Conte o que você quer criar ou melhorar</h2>
+          <p>
+            Envie uma mensagem com sua ideia. Pode ser um site novo, sistema interno,
+            loja virtual ou automação para tirar trabalho manual da rotina.
+          </p>
+          <div class="contact-direct">
+            <a href="tel:+5541996310725">(41) 99631-0725</a>
+            <a href="mailto:contato@calutec.com.br">contato@calutec.com.br</a>
+          </div>
+        </div>
+
+        <form class="contact-form" data-contact-form>
+          <label>
+            Nome
+            <input name="nome" type="text" autocomplete="name" required>
+          </label>
+          <label>
+            Telefone
+            <input name="telefone" type="tel" autocomplete="tel" required>
+          </label>
+          <label>
+            Tipo de projeto
+            <select name="servico" required>
+              <option value="">Selecione</option>
+              <option>Site institucional</option>
+              <option>Landing page</option>
+              <option>Loja virtual</option>
+              <option>Sistema web</option>
+              <option>Automação ou integração</option>
+              <option>Manutenção de sistema</option>
+            </select>
+          </label>
+          <label>
+            Mensagem
+            <textarea name="mensagem" rows="5" placeholder="Explique brevemente o que você precisa" required></textarea>
+          </label>
+          <button class="button button-primary" type="submit">Enviar pelo WhatsApp</button>
+          <p class="form-note">O formulário abre uma conversa no WhatsApp com sua mensagem preenchida.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/img/calutec-mark.svg" alt="" width="38" height="38">
+        <span>
+          <strong>Calutec</strong>
+          <small>Desenvolvimento de sites e sistemas</small>
+        </span>
+      </div>
+      <p>© 2026 Calutec. Uma empresa CL Tecnologia - CNPJ: 49.733.076/0001-15</p>
+      <a href="#inicio">Voltar ao topo</a>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

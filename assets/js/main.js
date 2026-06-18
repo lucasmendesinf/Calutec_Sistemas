@@ -1,0 +1,133 @@
+const header = document.querySelector("[data-header]");
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const siteNav = document.querySelector("[data-site-nav]");
+const contactForm = document.querySelector("[data-contact-form]");
+
+const setHeaderState = () => {
+  header?.classList.toggle("is-scrolled", window.scrollY > 12);
+};
+
+setHeaderState();
+window.addEventListener("scroll", setHeaderState, { passive: true });
+
+menuToggle?.addEventListener("click", () => {
+  const isOpen = siteNav.classList.toggle("is-open");
+  document.body.classList.toggle("menu-open", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+siteNav?.addEventListener("click", (event) => {
+  if (event.target.matches("a")) {
+    siteNav.classList.remove("is-open");
+    document.body.classList.remove("menu-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+  }
+});
+
+contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const data = new FormData(contactForm);
+  const nome = data.get("nome")?.toString().trim();
+  const telefone = data.get("telefone")?.toString().trim();
+  const servico = data.get("servico")?.toString().trim();
+  const mensagem = data.get("mensagem")?.toString().trim();
+
+  const text = [
+    "Olá, quero solicitar um orçamento com a Calutec.",
+    "",
+    `Nome: ${nome}`,
+    `Telefone: ${telefone}`,
+    `Tipo de projeto: ${servico}`,
+    `Mensagem: ${mensagem}`,
+  ].join("\n");
+
+  window.open(`https://wa.me/5541996310725?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+});
+
+const canvas = document.querySelector("#tech-canvas");
+const context = canvas?.getContext("2d");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (canvas && context && !prefersReducedMotion) {
+  const pointer = { x: 0, y: 0, active: false };
+  let particles = [];
+  let animationFrame = 0;
+
+  const resize = () => {
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = Math.max(1, Math.floor(rect.width * ratio));
+    canvas.height = Math.max(1, Math.floor(rect.height * ratio));
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+    const count = Math.min(90, Math.max(42, Math.floor(rect.width / 18)));
+    particles = Array.from({ length: count }, () => ({
+      x: Math.random() * rect.width,
+      y: Math.random() * rect.height,
+      vx: (Math.random() - 0.5) * 0.28,
+      vy: (Math.random() - 0.5) * 0.28,
+      size: Math.random() * 1.8 + 0.8,
+    }));
+  };
+
+  const draw = () => {
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    context.clearRect(0, 0, width, height);
+
+    particles.forEach((particle, index) => {
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+
+      if (particle.x < 0 || particle.x > width) particle.vx *= -1;
+      if (particle.y < 0 || particle.y > height) particle.vy *= -1;
+
+      if (pointer.active) {
+        const dx = pointer.x - particle.x;
+        const dy = pointer.y - particle.y;
+        const distance = Math.hypot(dx, dy);
+        if (distance < 130) {
+          particle.x -= dx * 0.002;
+          particle.y -= dy * 0.002;
+        }
+      }
+
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+      context.fillStyle = "rgba(32, 215, 255, 0.58)";
+      context.fill();
+
+      for (let nextIndex = index + 1; nextIndex < particles.length; nextIndex += 1) {
+        const next = particles[nextIndex];
+        const distance = Math.hypot(particle.x - next.x, particle.y - next.y);
+
+        if (distance < 118) {
+          context.beginPath();
+          context.moveTo(particle.x, particle.y);
+          context.lineTo(next.x, next.y);
+          context.strokeStyle = `rgba(32, 215, 255, ${0.18 - distance / 760})`;
+          context.lineWidth = 1;
+          context.stroke();
+        }
+      }
+    });
+
+    animationFrame = requestAnimationFrame(draw);
+  };
+
+  window.addEventListener("resize", resize, { passive: true });
+  window.addEventListener("pointermove", (event) => {
+    const rect = canvas.getBoundingClientRect();
+    pointer.x = event.clientX - rect.left;
+    pointer.y = event.clientY - rect.top;
+    pointer.active = true;
+  }, { passive: true });
+  window.addEventListener("pointerleave", () => {
+    pointer.active = false;
+  }, { passive: true });
+
+  resize();
+  draw();
+
+  window.addEventListener("beforeunload", () => cancelAnimationFrame(animationFrame));
+}
