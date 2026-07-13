@@ -7,6 +7,13 @@ const modalPanel = projectModal?.querySelector(".project-modal-panel");
 const modalImage = projectModal?.querySelector("[data-modal-image]");
 const modalTitle = projectModal?.querySelector("[data-modal-title]");
 const modalDescription = projectModal?.querySelector("[data-modal-description]");
+const cookieBanner = document.querySelector("#cookieBanner");
+const cookieAccept = document.querySelector("[data-cookie-accept]");
+const cookieClose = document.querySelector("[data-cookie-close]");
+const termsModal = document.querySelector("#termsModal");
+const termsOpen = document.querySelectorAll("[data-terms-open]");
+const termsClose = document.querySelectorAll("[data-terms-close]");
+const cookieStorageKey = "calutec_cookie_terms_v1";
 let activeProjectTrigger = null;
 
 const setHeaderState = () => {
@@ -101,6 +108,58 @@ document.addEventListener("keydown", (event) => {
     closeProjectModal();
   }
 });
+
+if (cookieBanner && cookieAccept && cookieClose) {
+  const hasCookieDecision = localStorage.getItem(cookieStorageKey);
+
+  if (!hasCookieDecision) {
+    cookieBanner.hidden = false;
+  }
+
+  cookieAccept.addEventListener("click", () => {
+    localStorage.setItem(cookieStorageKey, "accepted");
+    cookieBanner.hidden = true;
+  });
+
+  cookieClose.addEventListener("click", () => {
+    localStorage.setItem(cookieStorageKey, "closed");
+    cookieBanner.hidden = true;
+  });
+}
+
+if (termsModal && termsOpen.length && termsClose.length) {
+  const openTerms = (event) => {
+    event.preventDefault();
+    termsModal.hidden = false;
+    document.body.classList.add("modal-open");
+    termsModal.querySelector("[data-terms-close]")?.focus();
+  };
+
+  const closeTerms = () => {
+    termsModal.hidden = true;
+    document.body.classList.remove("modal-open");
+  };
+
+  termsOpen.forEach((trigger) => {
+    trigger.addEventListener("click", openTerms);
+  });
+
+  termsClose.forEach((trigger) => {
+    trigger.addEventListener("click", closeTerms);
+  });
+
+  termsModal.addEventListener("click", (event) => {
+    if (event.target === termsModal) {
+      closeTerms();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !termsModal.hidden) {
+      closeTerms();
+    }
+  });
+}
 
 const canvas = document.querySelector("#tech-canvas");
 const context = canvas?.getContext("2d");
