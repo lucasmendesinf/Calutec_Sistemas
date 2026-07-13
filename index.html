@@ -14,14 +14,15 @@
       property="og:description"
       content="Soluções digitais sob medida para organizar processos, vender mais e profissionalizar sua presença online."
     >
-    <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link rel="icon" href="assets/img/logo-site.png" type="image/png">
+    <link rel="preload" href="assets/img/fundo.webp" as="image" type="image/webp">
     <link rel="preload" href="assets/css/styles.css" as="style">
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="#inicio" aria-label="Calutec - Início">
-        <img src="assets/img/logo.png" alt="" width="42" height="42">
+        <img src="assets/img/logo-site.png" alt="" width="42" height="42" decoding="async">
         <span>
           <strong>Calutec</strong>
           <small>Tecnologia e Sistemas</small>
@@ -261,11 +262,14 @@
           <article
             class="project-card"
             data-project-title="Site institucional"
-            data-project-image="assets/img/projetos/site-calutec.png"
+            data-project-image="assets/img/projetos/site-calutec.webp"
             data-project-description="Site da Calutec com apresentação profissional de serviços, tecnologia e captação pelo WhatsApp. A prévia mostra como uma página institucional pode destacar autoridade, serviços e chamada direta para orçamento."
           >
             <button class="project-visual" type="button" data-project-trigger aria-label="Ver prévia do site institucional da Calutec">
-              <img src="assets/img/projetos/site-calutec.png" alt="Prévia do site institucional da Calutec" loading="lazy">
+              <picture>
+                <source srcset="assets/img/projetos/site-calutec.webp" type="image/webp">
+                <img src="assets/img/projetos/site-calutec.png" alt="Prévia do site institucional da Calutec" width="1878" height="906" loading="lazy" decoding="async">
+              </picture>
             </button>
             <h3>Site institucional</h3>
             <p>Site da Calutec com apresentação profissional de serviços, tecnologia e captação pelo WhatsApp.</p>
@@ -275,11 +279,14 @@
           <article
             class="project-card"
             data-project-title="Sistema de gestão"
-            data-project-image="assets/img/projetos/sistema-ordem-servico.png"
+            data-project-image="assets/img/projetos/sistema-ordem-servico.webp"
             data-project-description="Projeto de ordem de serviço para controlar clientes, atendimentos, status, equipe e indicadores. Ideal para empresas que precisam organizar processos internos e acompanhar cada etapa do atendimento."
           >
             <button class="project-visual" type="button" data-project-trigger aria-label="Ver prévia do sistema de ordem de serviço">
-              <img src="assets/img/projetos/sistema-ordem-servico.png" alt="Prévia do sistema de ordem de serviço" loading="lazy">
+              <picture>
+                <source srcset="assets/img/projetos/sistema-ordem-servico.webp" type="image/webp">
+                <img src="assets/img/projetos/sistema-ordem-servico.png" alt="Prévia do sistema de ordem de serviço" width="1716" height="712" loading="lazy" decoding="async">
+              </picture>
             </button>
             <h3>Sistema de gestão</h3>
             <p>Projeto de ordem de serviço para controlar clientes, atendimentos, status, equipe e indicadores.</p>
@@ -289,11 +296,14 @@
           <article
             class="project-card"
             data-project-title="Loja virtual"
-            data-project-image="assets/img/projetos/loja-lubayshop.png"
+            data-project-image="assets/img/projetos/loja-lubayshop.webp"
             data-project-description="Lubay Shop, loja virtual com catálogo online, navegação comercial e estrutura para vendas digitais. A prévia serve como referência para apresentar produtos, categorias e canais de compra."
           >
             <button class="project-visual" type="button" data-project-trigger aria-label="Ver prévia da loja virtual Lubay Shop">
-              <img src="assets/img/projetos/loja-lubayshop.png" alt="Prévia da loja virtual Lubay Shop" loading="lazy">
+              <picture>
+                <source srcset="assets/img/projetos/loja-lubayshop.webp" type="image/webp">
+                <img src="assets/img/projetos/loja-lubayshop.png" alt="Prévia da loja virtual Lubay Shop" width="762" height="484" loading="lazy" decoding="async">
+              </picture>
             </button>
             <h3>Loja virtual</h3>
             <p>Lubay Shop, loja virtual com catálogo online, navegação comercial e estrutura para vendas digitais.</p>
@@ -392,7 +402,7 @@
 
     <footer class="site-footer">
       <div class="footer-brand">
-        <img src="assets/img/logo.png" alt="" width="38" height="38">
+        <img src="assets/img/logo-site.png" alt="" width="38" height="38" decoding="async">
         <span>
           <strong>Calutec</strong>
           <small>Desenvolvimento de sites e sistemas</small>

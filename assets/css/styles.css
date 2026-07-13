@@ -188,11 +188,23 @@ textarea {
   min-height: 84svh;
   overflow: hidden;
   color: var(--white);
-  background:
+  background-color: var(--ink-950);
+  background-image:
     linear-gradient(90deg, rgba(5, 5, 5, 0.94), rgba(5, 5, 5, 0.82) 46%, rgba(5, 5, 5, 0.62)),
     radial-gradient(circle at 78% 28%, rgba(255, 90, 0, 0.32), transparent 30%),
-    url("../img/fundo.png") center / cover no-repeat,
-    var(--ink-950);
+    url("../img/fundo.png");
+  background-position: center;
+  background-size: auto, auto, cover;
+  background-repeat: no-repeat;
+}
+
+@supports (background-image: image-set(url("../img/fundo.webp") 1x)) {
+  .hero {
+    background-image:
+      linear-gradient(90deg, rgba(5, 5, 5, 0.94), rgba(5, 5, 5, 0.82) 46%, rgba(5, 5, 5, 0.62)),
+      radial-gradient(circle at 78% 28%, rgba(255, 90, 0, 0.32), transparent 30%),
+      image-set(url("../img/fundo.webp") type("image/webp"), url("../img/fundo.png") type("image/png"));
+  }
 }
 
 #tech-canvas,
@@ -721,9 +733,17 @@ textarea {
   pointer-events: none;
 }
 
+.project-visual picture,
 .project-visual img {
   width: 100%;
   height: 100%;
+}
+
+.project-visual picture {
+  display: block;
+}
+
+.project-visual img {
   object-fit: cover;
   object-position: top center;
   transition: transform 0.35s ease;
