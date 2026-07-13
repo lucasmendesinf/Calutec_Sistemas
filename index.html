@@ -8,20 +8,20 @@
       name="description"
       content="Desenvolvimento de sites, sistemas web, lojas virtuais, automações e integrações sob medida para empresas."
     >
-    <meta name="theme-color" content="#061b38">
+    <meta name="theme-color" content="#050505">
     <meta property="og:title" content="Calutec | Desenvolvimento de Sites e Sistemas">
     <meta
       property="og:description"
       content="Soluções digitais sob medida para organizar processos, vender mais e profissionalizar sua presença online."
     >
-    <link rel="icon" href="assets/img/calutec-mark.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
     <link rel="preload" href="assets/css/styles.css" as="style">
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="#inicio" aria-label="Calutec - Início">
-        <img src="assets/img/calutec-mark.svg" alt="" width="42" height="42">
+        <img src="assets/img/logo.png" alt="" width="42" height="42">
         <span>
           <strong>Calutec</strong>
           <small>Tecnologia e Sistemas</small>
@@ -252,37 +252,52 @@
           <p class="eyebrow">Projetos e possibilidades</p>
           <h2>Exemplos de entregas que ajudam a divulgar seu trabalho</h2>
           <p>
-            Use esta área para exibir seus melhores sites, sistemas e automações. Ela já está pronta
-            para receber links reais do portfólio.
+            Use esta área para exibir prévias dos seus melhores sites, sistemas e automações com
+            detalhes rápidos sobre cada entrega.
           </p>
         </div>
 
         <div class="portfolio-grid">
-          <article class="project-card">
-            <a class="project-visual" href="https://calutec.com.br/" target="_blank" rel="noopener" aria-label="Ver site institucional da Calutec">
+          <article
+            class="project-card"
+            data-project-title="Site institucional"
+            data-project-image="assets/img/projetos/site-calutec.png"
+            data-project-description="Site da Calutec com apresentação profissional de serviços, tecnologia e captação pelo WhatsApp. A prévia mostra como uma página institucional pode destacar autoridade, serviços e chamada direta para orçamento."
+          >
+            <button class="project-visual" type="button" data-project-trigger aria-label="Ver prévia do site institucional da Calutec">
               <img src="assets/img/projetos/site-calutec.png" alt="Prévia do site institucional da Calutec" loading="lazy">
-            </a>
+            </button>
             <h3>Site institucional</h3>
             <p>Site da Calutec com apresentação profissional de serviços, tecnologia e captação pelo WhatsApp.</p>
-            <a class="project-link" href="https://calutec.com.br/" target="_blank" rel="noopener">Ver site</a>
+            <button class="project-link" type="button" data-project-trigger>Ver prévia</button>
           </article>
 
-          <article class="project-card">
-            <a class="project-visual" href="/painel/ordem.php" target="_blank" rel="noopener" aria-label="Ver sistema de ordem de serviço">
+          <article
+            class="project-card"
+            data-project-title="Sistema de gestão"
+            data-project-image="assets/img/projetos/sistema-ordem-servico.png"
+            data-project-description="Projeto de ordem de serviço para controlar clientes, atendimentos, status, equipe e indicadores. Ideal para empresas que precisam organizar processos internos e acompanhar cada etapa do atendimento."
+          >
+            <button class="project-visual" type="button" data-project-trigger aria-label="Ver prévia do sistema de ordem de serviço">
               <img src="assets/img/projetos/sistema-ordem-servico.png" alt="Prévia do sistema de ordem de serviço" loading="lazy">
-            </a>
+            </button>
             <h3>Sistema de gestão</h3>
             <p>Projeto de ordem de serviço para controlar clientes, atendimentos, status, equipe e indicadores.</p>
-            <a class="project-link" href="/painel/ordem.php" target="_blank" rel="noopener">Ver sistema</a>
+            <button class="project-link" type="button" data-project-trigger>Ver prévia</button>
           </article>
 
-          <article class="project-card">
-            <a class="project-visual" href="https://lubayshop.com.br/" target="_blank" rel="noopener" aria-label="Ver loja virtual Lubay Shop">
+          <article
+            class="project-card"
+            data-project-title="Loja virtual"
+            data-project-image="assets/img/projetos/loja-lubayshop.png"
+            data-project-description="Lubay Shop, loja virtual com catálogo online, navegação comercial e estrutura para vendas digitais. A prévia serve como referência para apresentar produtos, categorias e canais de compra."
+          >
+            <button class="project-visual" type="button" data-project-trigger aria-label="Ver prévia da loja virtual Lubay Shop">
               <img src="assets/img/projetos/loja-lubayshop.png" alt="Prévia da loja virtual Lubay Shop" loading="lazy">
-            </a>
+            </button>
             <h3>Loja virtual</h3>
             <p>Lubay Shop, loja virtual com catálogo online, navegação comercial e estrutura para vendas digitais.</p>
-            <a class="project-link" href="https://lubayshop.com.br/" target="_blank" rel="noopener">Ver loja</a>
+            <button class="project-link" type="button" data-project-trigger>Ver prévia</button>
           </article>
         </div>
       </section>
@@ -377,7 +392,7 @@
 
     <footer class="site-footer">
       <div class="footer-brand">
-        <img src="assets/img/calutec-mark.svg" alt="" width="38" height="38">
+        <img src="assets/img/logo.png" alt="" width="38" height="38">
         <span>
           <strong>Calutec</strong>
           <small>Desenvolvimento de sites e sistemas</small>
@@ -386,6 +401,21 @@
       <p>© 2026 Calutec. Uma empresa CL Tecnologia - CNPJ: 49.733.076/0001-15</p>
       <a href="#inicio">Voltar ao topo</a>
     </footer>
+
+    <div class="project-modal" data-project-modal aria-hidden="true">
+      <div class="project-modal-backdrop" data-modal-close></div>
+      <section class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" aria-describedby="project-modal-description" tabindex="-1">
+        <button class="modal-close" type="button" data-modal-close aria-label="Fechar prévia">×</button>
+        <figure>
+          <img src="" alt="" data-modal-image>
+        </figure>
+        <div class="project-modal-copy">
+          <p class="eyebrow">Prévia do projeto</p>
+          <h2 id="project-modal-title" data-modal-title></h2>
+          <p id="project-modal-description" data-modal-description></p>
+        </div>
+      </section>
+    </div>
 
     <script src="assets/js/main.js"></script>
   </body>

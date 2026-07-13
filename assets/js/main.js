@@ -2,6 +2,12 @@ const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");
 const contactForm = document.querySelector("[data-contact-form]");
+const projectModal = document.querySelector("[data-project-modal]");
+const modalPanel = projectModal?.querySelector(".project-modal-panel");
+const modalImage = projectModal?.querySelector("[data-modal-image]");
+const modalTitle = projectModal?.querySelector("[data-modal-title]");
+const modalDescription = projectModal?.querySelector("[data-modal-description]");
+let activeProjectTrigger = null;
 
 const setHeaderState = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 12);
@@ -42,6 +48,58 @@ contactForm?.addEventListener("submit", (event) => {
   ].join("\n");
 
   window.open(`https://wa.me/5541996310725?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+});
+
+const closeProjectModal = () => {
+  if (!projectModal) return;
+
+  projectModal.classList.remove("is-open");
+  projectModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+
+  if (modalImage) {
+    modalImage.removeAttribute("src");
+    modalImage.alt = "";
+  }
+
+  activeProjectTrigger?.focus();
+  activeProjectTrigger = null;
+};
+
+const openProjectModal = (trigger) => {
+  const card = trigger.closest(".project-card");
+  if (!projectModal || !card || !modalImage || !modalTitle || !modalDescription) return;
+
+  const { projectTitle, projectImage, projectDescription } = card.dataset;
+  if (!projectTitle || !projectImage || !projectDescription) return;
+
+  activeProjectTrigger = trigger;
+  modalImage.src = projectImage;
+  modalImage.alt = `Prévia de ${projectTitle}`;
+  modalTitle.textContent = projectTitle;
+  modalDescription.textContent = projectDescription;
+  projectModal.classList.add("is-open");
+  projectModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  modalPanel?.focus();
+};
+
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest("[data-project-trigger]");
+  if (trigger) {
+    openProjectModal(trigger);
+    return;
+  }
+
+  if (event.target.closest("[data-modal-close]")) {
+    closeProjectModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && projectModal?.classList.contains("is-open")) {
+    closeProjectModal();
+  }
 });
 
 const canvas = document.querySelector("#tech-canvas");
@@ -94,7 +152,7 @@ if (canvas && context && !prefersReducedMotion) {
 
       context.beginPath();
       context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-      context.fillStyle = "rgba(32, 215, 255, 0.58)";
+      context.fillStyle = "rgba(255, 90, 0, 0.62)";
       context.fill();
 
       for (let nextIndex = index + 1; nextIndex < particles.length; nextIndex += 1) {
@@ -105,7 +163,7 @@ if (canvas && context && !prefersReducedMotion) {
           context.beginPath();
           context.moveTo(particle.x, particle.y);
           context.lineTo(next.x, next.y);
-          context.strokeStyle = `rgba(32, 215, 255, ${0.18 - distance / 760})`;
+          context.strokeStyle = `rgba(255, 90, 0, ${0.2 - distance / 720})`;
           context.lineWidth = 1;
           context.stroke();
         }
