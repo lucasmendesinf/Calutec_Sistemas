@@ -13,6 +13,9 @@ const cookieClose = document.querySelector("[data-cookie-close]");
 const termsModal = document.querySelector("#termsModal");
 const termsOpen = document.querySelectorAll("[data-terms-open]");
 const termsClose = document.querySelectorAll("[data-terms-close]");
+const videoPopup = document.querySelector("[data-video-popup]");
+const videoPopupPanel = videoPopup?.querySelector(".video-popup-panel");
+const videoFrame = videoPopup?.querySelector("[data-video-frame]");
 const cookieStorageKey = "calutec_cookie_terms_v1";
 let activeProjectTrigger = null;
 
@@ -157,6 +160,46 @@ if (termsModal && termsOpen.length && termsClose.length) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !termsModal.hidden) {
       closeTerms();
+    }
+  });
+}
+
+const closeVideoPopup = () => {
+  if (!videoPopup) return;
+
+  videoPopup.hidden = true;
+  videoPopup.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+
+  if (videoFrame) {
+    videoFrame.removeAttribute("src");
+  }
+};
+
+const openVideoPopup = () => {
+  if (!videoPopup || !videoFrame) return;
+
+  videoFrame.src = videoFrame.dataset.videoSrc || "";
+  videoPopup.hidden = false;
+  videoPopup.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  videoPopupPanel?.focus();
+};
+
+if (videoPopup) {
+  window.addEventListener("load", () => {
+    window.setTimeout(openVideoPopup, 650);
+  }, { once: true });
+
+  videoPopup.addEventListener("click", (event) => {
+    if (event.target.closest("[data-video-popup-close]")) {
+      closeVideoPopup();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !videoPopup.hidden) {
+      closeVideoPopup();
     }
   });
 }
