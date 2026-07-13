@@ -922,6 +922,10 @@ textarea {
   font-size: 1.03rem;
 }
 
+.video-popup-cta {
+  margin-top: 24px;
+}
+
 .video-frame {
   padding: clamp(18px, 3vw, 34px) clamp(18px, 3vw, 34px) clamp(18px, 3vw, 34px) 0;
 }
